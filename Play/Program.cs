@@ -8,13 +8,12 @@ namespace PlayTask1
         {
             // Создание и тестирование объектов Play
             Play play1 = new Play("Гамлет", "Уильям Шекспир", "Трагедия", "1600-01-01");
-            Play play2 = new Play("авыаыв", "Уильям Шекспир", "Трагедия", "1600-01-01");
   
             Console.WriteLine(play1);
-            Console.WriteLine(play2);
+           
+            play1.Dispose();
 
-
-            Console.WriteLine(play2);
+            Console.WriteLine(play1);
             // Создание списка пьес
             List<Play> plays = new List<Play>
                 {

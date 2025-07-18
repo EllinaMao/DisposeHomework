@@ -82,15 +82,9 @@ namespace PlayTask1
         ~Play()
         {
             Console.WriteLine("Finalizator");
-            PlayName = string.Empty;
-            AutorName = string.Empty;
-            PlayGenre = string.Empty;
-            YearOfRelease = DateOnly.MinValue;
+
 
         }
-
-
-
 
 
 
