@@ -8,7 +8,7 @@ namespace task2
 {
     public interface IFactory
     {
-        IStore CreateStore(string storeType, string name, string address);
+        IStore CreateStore(string name, string address);
 
     }
 }

@@ -7,11 +7,8 @@ using task2.Stores;
 
 namespace task2
 {
-    public class ClothingStore : Store, IStore
+    public class ClothingStore(string name, string address) : Store(name, address), IStore
     {
-        public string Type => "Одежды";
-        public ClothingStore(string name, string address) : base(name, address)
-        {
-        }
+        public new string Type => "Одежды";
     }
 }

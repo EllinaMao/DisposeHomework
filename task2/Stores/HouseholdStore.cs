@@ -3,33 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using task2.Stores;
 
 namespace task2
 {
-    public class HouseholdStore : IStore
+    public class HouseholdStore(string name, string address) : Store(name, address), IStore
     {
-        public string Name { get; set; }
-        public string Address { get; set; }
-        public string Type => "Хозяйственный";
-        public HouseholdStore(string name, string address)
-        {
-            Name = name;
-            Address = address;
-        }
-        public void Display()
-        {
-            Console.WriteLine($"{Type} магазин: {Name}, Адрес: {Address}");
-        }
-        public override string ToString()
-        {
-            return $"{Type} магазин: {Name}, Адрес: {Address}";
-        }
-        public void Dispose()
-        {
-            Console.WriteLine($"Освобождение ресурсов магазина {Name}");
-            Name = string.Empty;
-            Address = string.Empty;
+         public new string Type => "Хозяйственный";
+    }
 
-        }
-    }   
 }

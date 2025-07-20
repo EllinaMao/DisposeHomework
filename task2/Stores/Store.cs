@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace task2.Stores
 {
-    public class Store:IStore
+    public class Store : IStore, IDisposable
     {
+        //private bool _disposed = false;
+
         public string Name { get; set; }
         public string Address { get; set; }
         public string Type => "Магазин";
@@ -24,12 +26,31 @@ namespace task2.Stores
         {
             return $"{Type} магазин: {Name}, Адрес: {Address}";
         }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            //if (!_disposed)
+            //{
+                if (disposing)
+                {
+                    // Free managed resources here
+                    Name = string.Empty;
+                    Address = string.Empty;
+                }
+                // Free unmanaged resources here (if any)
+                //_disposed = true;
+            //}
+        }
+
         public void Dispose()
         {
-            Console.WriteLine($"Освобождение ресурсов магазина {Name}");
-            Name = string.Empty;
-            Address = string.Empty;
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
 
+        ~Store()
+        {
+            Dispose(false);
         }
     }
 }

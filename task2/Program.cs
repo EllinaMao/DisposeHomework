@@ -19,11 +19,36 @@ namespace task2
 Напишите код для вызова метода Dispose.*/
         static void Main(string[] args)
         {
-            ClothingFactory store = new ClothingFactory();
-            IStore clothingStore = store.CreateStore("Одежда", "Модный дом", "ул. Моды, 1");
-            clothingStore.Display();
-            clothingStore.Dispose();
-            clothingStore.Display();
+ 
+            List<IStore> list = [];
+            IStore groceryStore = new GroceryStore("Продукты", "ул. Продуктовая, 10");
+            list.Add(groceryStore);
+
+             IStore householdStore = new HouseholdStore("Хозтовары", "ул. Хозяйственная, 20");
+            list.Add(householdStore);
+
+            IStore clothingStore = new ClothingStore("Модный дом", "ул. Моды, 1");
+            list.Add(clothingStore);
+
+            IStore shoesStore = new ShoesStore("Обувной рай", "ул. Обувная, 5");
+            list.Add(shoesStore);
+
+            // Тестирование: вывод информации и вызов Dispose
+            foreach (var store in list)
+            {
+                store.Display();
+            }        
+            foreach (var store in list)
+            {
+                store.Dispose();
+            }
+
+            Console.WriteLine("\nПосле удаления\n");
+            foreach (var store in list)
+            {
+                store.Display();
+            }
+
         }
     }
 }
