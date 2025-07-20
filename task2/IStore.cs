@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace task2
 {
-    public interface IStore
+    public interface IStore:IDisposable
     {
         string Name { get; set; }
         string Address { get; set; }
         string Type { get; }
-        void PrintInfo();
+        void Display();
 
     }
 }

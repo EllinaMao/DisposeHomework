@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace task2
+namespace task2.Stores
 {
-    public class HouseholdStore : IStore
+    public class Store:IStore
     {
         public string Name { get; set; }
         public string Address { get; set; }
-        public string Type => "Хозяйственный";
-        public HouseholdStore(string name, string address)
+        public string Type => "Магазин";
+        public Store(string name, string address)
         {
             Name = name;
             Address = address;
@@ -31,5 +31,5 @@ namespace task2
             Address = string.Empty;
 
         }
-    }   
+    }
 }

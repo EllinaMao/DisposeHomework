@@ -19,7 +19,11 @@ namespace task2
 Напишите код для вызова метода Dispose.*/
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            ClothingFactory store = new ClothingFactory();
+            IStore clothingStore = store.CreateStore("Одежда", "Модный дом", "ул. Моды, 1");
+            clothingStore.Display();
+            clothingStore.Dispose();
+            clothingStore.Display();
         }
     }
 }

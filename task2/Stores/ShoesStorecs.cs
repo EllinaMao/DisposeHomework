@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace task2
 {
@@ -17,7 +19,7 @@ namespace task2
             Name = name;
             Address = address;
         }
-        public void PrintInfo()
+        public void Display()
         {
             Console.WriteLine($"{Type} магазин: {Name}, Адрес: {Address}");
         }
@@ -26,6 +28,12 @@ namespace task2
         {
             return $"{Type} магазин: {Name}, Адрес: {Address}";
         }
+        public void Dispose()
+        {
+            Console.WriteLine($"Освобождение ресурсов магазина {Name}");
+            Name = string.Empty;
+            Address = string.Empty;
 
+        }
     }
 }
