@@ -1,5 +1,5 @@
-﻿
-namespace task2
+﻿using task2.Stores;
+namespace task2 
 {
     internal class Program{
     /*Задание 2

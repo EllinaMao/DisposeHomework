@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using task2.Stores;
 
-namespace task2
+namespace task2.Stores
 {
     public class HouseholdStore(string name, string address) : Store(name, address), IStore
     {
